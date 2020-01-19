@@ -32,15 +32,13 @@ class _MatchClockWidgetState extends State<MatchClockWidget>
     final minute = _dateTime.minute;
     _matches = [
       ...widget.creator
-          .getFirstDigitMatches(
-          widget.creator.getMatchesForDigit(hour ~/ 10))
+          .getFirstDigitMatches(widget.creator.getMatchesForDigit(hour ~/ 10))
           .toList(),
       ...widget.creator
           .getSecondDigitMatches(widget.creator.getMatchesForDigit(hour % 10))
           .toList(),
       ...widget.creator
-          .getThirdDigitMatches(
-          widget.creator.getMatchesForDigit(minute ~/ 10))
+          .getThirdDigitMatches(widget.creator.getMatchesForDigit(minute ~/ 10))
           .toList(),
       ...widget.creator
           .getFourthDigitMatches(widget.creator.getMatchesForDigit(minute % 10))
@@ -71,15 +69,13 @@ class _MatchClockWidgetState extends State<MatchClockWidget>
     final minute = _dateTime.minute;
     calculateMatches([
       ...widget.creator
-          .getFirstDigitMatches(
-              widget.creator.getMatchesForDigit(hour ~/ 10))
+          .getFirstDigitMatches(widget.creator.getMatchesForDigit(hour ~/ 10))
           .toList(),
       ...widget.creator
           .getSecondDigitMatches(widget.creator.getMatchesForDigit(hour % 10))
           .toList(),
       ...widget.creator
-          .getThirdDigitMatches(
-              widget.creator.getMatchesForDigit(minute ~/ 10))
+          .getThirdDigitMatches(widget.creator.getMatchesForDigit(minute ~/ 10))
           .toList(),
       ...widget.creator
           .getFourthDigitMatches(widget.creator.getMatchesForDigit(minute % 10))
@@ -172,11 +168,11 @@ class _MatchClockWidgetState extends State<MatchClockWidget>
 
   @override
   Widget build(BuildContext context) => Stack(
-      children: [
-        ..._matches
-            .map((match) => widget.creator.buildMatchImage(match))
-            .toList(),
-        widget.creator.buildDivider()
-      ],
-    );
+        children: [
+          ..._matches
+              .map((match) => widget.creator.buildMatchImage(match))
+              .toList(),
+          widget.creator.buildDivider()
+        ],
+      );
 }
